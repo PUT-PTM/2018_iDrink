@@ -1,115 +1,115 @@
 src/main.o: ../src/main.c \
- D:/stm32/workspace/iDrink/CMSIS/device/stm32f4xx.h \
- D:/stm32/workspace/iDrink/CMSIS/core/core_cm4.h \
- D:/stm32/workspace/iDrink/CMSIS/core/core_cmInstr.h \
- D:/stm32/workspace/iDrink/CMSIS/core/core_cmFunc.h \
- D:/stm32/workspace/iDrink/CMSIS/core/core_cm4_simd.h \
- D:/stm32/workspace/iDrink/CMSIS/device/system_stm32f4xx.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_conf.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_adc.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_can.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_crc.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_cryp.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dac.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dbgmcu.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dcmi.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dma.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_exti.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_flash.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_fsmc.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_hash.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_i2c.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_iwdg.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_pwr.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rng.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rtc.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_sdio.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_spi.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_syscfg.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_tim.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_usart.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_wwdg.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/misc.h \
- D:/stm32/workspace/iDrink/Utilities/stm32f4_discovery.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/device/stm32f4xx.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cm4.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cmInstr.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cmFunc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cm4_simd.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/device/system_stm32f4xx.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_conf.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_adc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_can.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_crc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_cryp.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dac.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dbgmcu.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dcmi.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dma.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_exti.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_flash.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_fsmc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_hash.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_i2c.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_iwdg.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_pwr.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rng.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rtc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_sdio.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_spi.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_syscfg.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_tim.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_usart.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_wwdg.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/misc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/Utilities/stm32f4_discovery.h \
  ../src/tm_stm32f4_delay.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h \
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h \
  ../src/defines.h ../src/attributes.h ../src/tm_stm32f4_hd44780.h \
- D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h \
- ../src/tm_stm32f4_gpio.h
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h \
+ ../src/tm_stm32f4_gpio.h ../src/menu.h
 
-D:/stm32/workspace/iDrink/CMSIS/device/stm32f4xx.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/device/stm32f4xx.h:
 
-D:/stm32/workspace/iDrink/CMSIS/core/core_cm4.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cm4.h:
 
-D:/stm32/workspace/iDrink/CMSIS/core/core_cmInstr.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cmInstr.h:
 
-D:/stm32/workspace/iDrink/CMSIS/core/core_cmFunc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cmFunc.h:
 
-D:/stm32/workspace/iDrink/CMSIS/core/core_cm4_simd.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cm4_simd.h:
 
-D:/stm32/workspace/iDrink/CMSIS/device/system_stm32f4xx.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/device/system_stm32f4xx.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_conf.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_conf.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_adc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_adc.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_can.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_can.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_crc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_crc.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_cryp.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_cryp.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dac.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dac.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dbgmcu.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dbgmcu.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dcmi.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dcmi.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_dma.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_dma.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_exti.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_exti.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_flash.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_flash.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_fsmc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_fsmc.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_hash.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_hash.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_i2c.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_i2c.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_iwdg.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_iwdg.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_pwr.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_pwr.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rng.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rng.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rtc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rtc.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_sdio.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_sdio.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_spi.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_spi.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_syscfg.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_syscfg.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_tim.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_tim.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_usart.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_usart.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_wwdg.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_wwdg.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/misc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/misc.h:
 
-D:/stm32/workspace/iDrink/Utilities/stm32f4_discovery.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/Utilities/stm32f4_discovery.h:
 
 ../src/tm_stm32f4_delay.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h:
 
 ../src/defines.h:
 
@@ -117,6 +117,8 @@ D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h:
 
 ../src/tm_stm32f4_hd44780.h:
 
-D:/stm32/workspace/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h:
+C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h:
 
 ../src/tm_stm32f4_gpio.h:
+
+../src/menu.h:
