@@ -15,6 +15,7 @@
 #include "tm_stm32f4_hd44780.h"
 #include "defines.h"
 #include "menu.h"
+#include "pump_driver.h"
 
 unsigned char selected = 1;
 
@@ -132,6 +133,8 @@ void init(){
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
 
+	init_pump_driver();
+
 	GPIO_InitTypeDef Przyciski;
 	Przyciski.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
 	Przyciski.GPIO_Mode = GPIO_Mode_IN;
@@ -153,7 +156,6 @@ void init(){
 int main(void) {
 
 	init();
-
     //Initialize system
     SystemInit();
 
