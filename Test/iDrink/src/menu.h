@@ -21,5 +21,16 @@ typedef const struct MenuStructure
 void show_menu(void);
 void browse_menu(void);
 void start(void);
+void info(void);
+
+
+void bacardi(void);
+void cuba_libre(void);
+void vodka_shot(void);
+void vodka_juice(void);
+void vodka_shot_juice(void);
+void vodka_cola(void);
+void kociolek(void);
+
 
 #endif /* MENU_H_ */

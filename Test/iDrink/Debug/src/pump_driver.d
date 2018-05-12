@@ -1,4 +1,4 @@
-src/main.o: ../src/main.c \
+src/pump_driver.o: ../src/pump_driver.c ../src/pump_driver.h \
  C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/device/stm32f4xx.h \
  C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cm4.h \
  C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/core/core_cmInstr.h \
@@ -32,12 +32,9 @@ src/main.o: ../src/main.c \
  C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_usart.h \
  C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_wwdg.h \
  C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/misc.h \
- C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/Utilities/stm32f4_discovery.h \
- ../src/tm_stm32f4_delay.h \
- C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h \
- ../src/defines.h ../src/attributes.h ../src/tm_stm32f4_hd44780.h \
- C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h \
- ../src/tm_stm32f4_gpio.h ../src/menu.h ../src/pump_driver.h
+ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/Utilities/stm32f4_discovery.h
+
+../src/pump_driver.h:
 
 C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/CMSIS/device/stm32f4xx.h:
 
@@ -106,21 +103,3 @@ C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm3
 C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/misc.h:
 
 C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/Utilities/stm32f4_discovery.h:
-
-../src/tm_stm32f4_delay.h:
-
-C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_rcc.h:
-
-../src/defines.h:
-
-../src/attributes.h:
-
-../src/tm_stm32f4_hd44780.h:
-
-C:/Users/N0tE/Documents/GitHub/2018_iDrink/Test/iDrink/StdPeriph_Driver/inc/stm32f4xx_gpio.h:
-
-../src/tm_stm32f4_gpio.h:
-
-../src/menu.h:
-
-../src/pump_driver.h:

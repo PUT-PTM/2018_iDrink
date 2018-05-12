@@ -33,6 +33,7 @@
 "Utilities/stm32f4_discovery_lis302dl.o"
 "src/main.o"
 "src/menu.o"
+"src/pump_driver.o"
 "src/syscalls.o"
 "src/system_stm32f4xx.o"
 "src/tm_stm32f4_delay.o"

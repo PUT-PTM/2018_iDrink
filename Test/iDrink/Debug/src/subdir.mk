@@ -6,6 +6,7 @@
 C_SRCS += \
 ../src/main.c \
 ../src/menu.c \
+../src/pump_driver.c \
 ../src/syscalls.c \
 ../src/system_stm32f4xx.c \
 ../src/tm_stm32f4_delay.c \
@@ -16,6 +17,7 @@ C_SRCS += \
 OBJS += \
 ./src/main.o \
 ./src/menu.o \
+./src/pump_driver.o \
 ./src/syscalls.o \
 ./src/system_stm32f4xx.o \
 ./src/tm_stm32f4_delay.o \
@@ -26,6 +28,7 @@ OBJS += \
 C_DEPS += \
 ./src/main.d \
 ./src/menu.d \
+./src/pump_driver.d \
 ./src/syscalls.d \
 ./src/system_stm32f4xx.d \
 ./src/tm_stm32f4_delay.d \

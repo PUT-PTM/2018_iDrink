@@ -19,18 +19,21 @@
 
 unsigned char selected = 1;
 
-const char menu_000[] = "  [Menu]          "; //0
+const char menu_000[] = "     [Menu]       "; //0
 const char menu_001[] = "  Wybierz drink   "; //1
 const char menu_002[] = "  Ustawienia      "; //2
-const char menu_003[] = "  Wyjscie         "; //3
-const char menu_004[] = "  func_test       "; //4
+const char menu_003[] = "  Wykonawcy       "; //3
+const char menu_004[] = "                  "; //4
 
-const char menu_100[] = "  [SubMenu]       "; //5
-const char menu_101[] = "  Drink1          "; //6
-const char menu_102[] = "  Drink2          "; //7
-const char menu_103[] = "  Drink3          "; //8
-const char menu_104[] = "  Drink4          "; //9
-const char menu_105[] = "  Wroc            "; //10
+const char menu_100[] = "     [SubMenu]    "; //5
+const char menu_101[] = "  Bacardi         "; //6
+const char menu_102[] = "  Cuba Libre      "; //7
+const char menu_103[] = "  Shot of vodka   "; //8
+const char menu_104[] = "  Shot of vodka J "; //9
+const char menu_105[] = "  Drink (vodka+J) "; //10
+const char menu_106[] = "  Drink (codka+C) "; //11
+const char menu_107[] = "  Try me          "; //12
+const char menu_108[] = "  Wroc            "; //13
 
 
 MenuEntry menu[] =
@@ -38,15 +41,18 @@ MenuEntry menu[] =
 		{menu_000, 5, 0, 0, 0, 0},
 		{menu_001, 5, 1, 2, 6, 0},
 		{menu_002, 5, 1, 3, 2, 0},
-		{menu_003, 5, 2, 4, 3, 0},
+		{menu_003, 5, 2, 4, 3, info},
 		{menu_004, 5, 3, 4, 4, start},
 
-		{menu_100, 6, 0, 0, 0, 0},
-		{menu_101, 6, 6, 7, 6, 0},
-		{menu_102, 6, 6, 8, 7, 0},
-		{menu_103, 6, 7, 9, 8, 0},
-		{menu_104, 6, 8, 10, 9, 0},
-		{menu_105, 6, 9, 10, 1, 0}
+		{menu_100, 9, 0, 0, 0, 0},
+		{menu_101, 9, 6, 7, 6, bacardi},
+		{menu_102, 9, 6, 8, 7, cuba_libre},
+		{menu_103, 9, 7, 9, 8, vodka_shot},
+		{menu_104, 9, 8, 10, 9, vodka_juice},
+		{menu_105, 9, 9, 11, 10, vodka_shot_juice},
+		{menu_106, 9, 10, 12, 11, vodka_cola},
+		{menu_107, 9, 11, 13, 12, kociolek},
+		{menu_108, 9, 12, 13, 1, 0}
 };
 
 void show_menu(void){
@@ -127,6 +133,52 @@ void start(void){
 	TM_HD44780_Clear();
 	TM_HD44780_Puts(0, 0, "start works!");
 	while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_1));
+}
+
+void bacardi(void){
+	pump(rum, 80);
+	pump(orange, 80);
+}
+
+void cuba_libre(void){
+	pump(rum, 60);
+	pump(orange, 60);
+	pump(lemon, 60);
+}
+
+void vodka_shot(void){
+	pump(vodka, 40);
+}
+void vodka_juice(void){
+	pump(vodka, 80);
+	pump(lemon, 80);
+}
+void vodka_shot_juice(void){
+	pump(vodka, 20);
+	pump(lemon, 20);
+}
+void vodka_cola(void){
+	pump(vodka, 80);
+	pump(orange, 80);
+}
+void kociolek(void){
+	pump(rum, 40);
+	pump(orange, 50);
+	pump(lemon, 50);
+	pump(vodka, 30);
+}
+
+void info(void){
+	TM_HD44780_Clear();
+	TM_HD44780_Puts(0, 0, "Szymon Janowski");
+	TM_HD44780_Puts(0, 1, "Bartosz Mikulski");
+	Delayms(3000);
+	TM_HD44780_Clear();
+	TM_HD44780_Puts(0, 0, "PUT");
+	TM_HD44780_Puts(0, 1, "Poznan 2018");
+	Delayms(2000);
+
+
 }
 
 void init(){
