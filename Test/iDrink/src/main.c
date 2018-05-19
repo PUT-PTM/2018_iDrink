@@ -136,36 +136,36 @@ void start(void){
 }
 
 void bacardi(void){
-	pump(rum, 80);
-	pump(orange, 80);
+	pump(rum, 8);
+	pump(orange, 8);
 }
 
 void cuba_libre(void){
-	pump(rum, 60);
-	pump(orange, 60);
-	pump(lemon, 60);
+	pump(rum, 6);
+	pump(orange, 6);
+	pump(lemon, 6);
 }
 
 void vodka_shot(void){
-	pump(vodka, 40);
+	pump(vodka, 4);
 }
 void vodka_juice(void){
-	pump(vodka, 80);
-	pump(lemon, 80);
+	pump(vodka, 8);
+	pump(lemon, 8);
 }
 void vodka_shot_juice(void){
-	pump(vodka, 20);
-	pump(lemon, 20);
+	pump(vodka, 2);
+	pump(lemon, 2);
 }
 void vodka_cola(void){
-	pump(vodka, 80);
-	pump(orange, 80);
+	pump(vodka, 8);
+	pump(orange, 8);
 }
 void kociolek(void){
-	pump(rum, 40);
-	pump(orange, 50);
-	pump(lemon, 50);
-	pump(vodka, 30);
+	pump(rum, 4);
+	pump(orange, 5);
+	pump(lemon, 5);
+	pump(vodka, 3);
 }
 
 void info(void){

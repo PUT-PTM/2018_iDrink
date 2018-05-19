@@ -14,12 +14,12 @@ const uint16_t ORANGE_PIN = GPIO_Pin_1;
 const uint16_t RUM_PIN = GPIO_Pin_2;
 const uint16_t VODKA_PIN = GPIO_Pin_3;
 
-TIM_TypeDef* LEMON_TIMER = TIM2;
+TIM_TypeDef* LEMON_TIMER = TIM7;
 TIM_TypeDef* ORANGE_TIMER = TIM3;
 TIM_TypeDef* RUM_TIMER = TIM4;
 TIM_TypeDef* VODKA_TIMER = TIM5;
 
-const uint8_t LEMON_IRQ = TIM2_IRQn;
+const uint8_t LEMON_IRQ = TIM7_IRQn;
 const uint8_t ORANGE_IRQ = TIM3_IRQn;
 const uint8_t RUM_IRQ = TIM4_IRQn;
 const uint8_t VODKA_IRQ = TIM5_IRQn;
@@ -29,7 +29,7 @@ void orange_IRQHandler();
 void rum_IRQHandler();
 void vodka_IRQHandler();
 
-void TIM2_IRQHandler(){lemon_IRQHandler();}
+void TIM7_IRQHandler(){lemon_IRQHandler();}
 void TIM3_IRQHandler(){orange_IRQHandler();}
 void TIM4_IRQHandler(){rum_IRQHandler();}
 void TIM5_IRQHandler(){vodka_IRQHandler();}
@@ -55,7 +55,7 @@ enum bool is_vodka_pumping = false;
 void init_pump_driver()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM7, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);
