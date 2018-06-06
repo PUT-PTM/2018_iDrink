@@ -100,6 +100,9 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
   * tm_stm32f4_hd44780
 
 # Photos
+![](https://i.imgur.com/nJXl1RL.jpg) 
+![](https://i.imgur.com/CleiBFQ.jpg) 
+![](https://i.imgur.com/ykVvEBY.jpg) 
 
 # Authors
 - [Szymon Janowski](https://github.com/sleter)
