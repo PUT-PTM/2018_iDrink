@@ -136,8 +136,9 @@ void start(void){
 }
 
 void bacardi(void){
-	pump(rum, 8);
 	pump(orange, 8);
+	Delayms(3000);
+	pump(rum, 8);
 }
 
 void cuba_libre(void){
@@ -177,12 +178,10 @@ void info(void){
 	TM_HD44780_Puts(0, 0, "PUT");
 	TM_HD44780_Puts(0, 1, "Poznan 2018");
 	Delayms(2000);
-
-
 }
 
 void init(){
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+	//RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
 
 	init_pump_driver();
@@ -195,18 +194,104 @@ void init(){
 	Przyciski.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_Init(GPIOA, &Przyciski);
 
-	GPIO_InitTypeDef GPIO_InitStructure;
-	GPIO_InitStructure.GPIO_Pin =
-	GPIO_Pin_12 | GPIO_Pin_13| GPIO_Pin_14| GPIO_Pin_15;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_Init(GPIOD, &GPIO_InitStructure);
+//	GPIO_InitTypeDef GPIO_InitStructure;
+//	GPIO_InitStructure.GPIO_Pin =
+//	GPIO_Pin_12 | GPIO_Pin_13| GPIO_Pin_14| GPIO_Pin_15;
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+//	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+//	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+//	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+//	GPIO_Init(GPIOD, &GPIO_InitStructure);
+//
+//	GPIO_SetBits(GPIOD, GPIO_Pin_14);
+}
+
+
+void USART3_IRQHandler(void)
+{
+    if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+    {
+            if (USART3->DR == 'B' )
+            {
+                bacardi();
+            }
+            if (USART3->DR == 'CL' )
+            {
+               cuba_libre();
+            }
+            if (USART3->DR == 'V' )
+            {
+               vodka_shot();
+            }
+            if (USART3->DR == 'K' )
+            {
+               kociolek();
+            }
+            if (USART3->DR == 'I' )
+            {
+               info();
+            }
+    }
+}
+
+//send a character trough UART
+void sendData(char character){
+    while(USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
+
+    USART_SendData(USART3, character);
+
+    while (USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET);
+}
+
+void initUart(){
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE); //uart
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE); //rxd txd
+
+    // konfiguracja linii Rx i Tx
+    GPIO_InitTypeDef GPIO_InitStructure;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+
+    GPIO_PinAFConfig(GPIOC, GPIO_PinSource10, GPIO_AF_USART3);
+    GPIO_PinAFConfig(GPIOC, GPIO_PinSource11, GPIO_AF_USART3);
+    USART_InitTypeDef USART_InitStructure;
+    USART_InitStructure.USART_BaudRate = 9600;
+    USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+    USART_InitStructure.USART_StopBits = USART_StopBits_1;
+    USART_InitStructure.USART_Parity = USART_Parity_No;
+    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+    USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+    USART_Init(USART3, &USART_InitStructure);
+
+
+    USART_Cmd(USART3, ENABLE);
+}
+
+void initUartIrq(){
+    //nvic configuration structure
+    NVIC_InitTypeDef NVIC_InitStructure2;
+    // turning on the interrupt for reciving data
+    USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
+    NVIC_InitStructure2.NVIC_IRQChannel = USART3_IRQn;
+    NVIC_InitStructure2.NVIC_IRQChannelPreemptionPriority = 0;
+    NVIC_InitStructure2.NVIC_IRQChannelSubPriority = 0;
+    NVIC_InitStructure2.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure2);
+    // turning on UART intterupt
+    NVIC_EnableIRQ(USART3_IRQn);
 }
 
 int main(void) {
 
+
+
+
+	initUart();
+	initUartIrq();
 	init();
     //Initialize system
     SystemInit();
@@ -215,6 +300,7 @@ int main(void) {
     TM_HD44780_Init(20, 4);
 
     browse_menu();
+
 
 }
 
