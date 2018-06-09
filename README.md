@@ -163,7 +163,7 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
            TIM_ClearITPendingBit(LEMON_TIMER, TIM_IT_Update);
            }
          }
-	 ```
+         ```
 - Bluetooth handling
   * main.c
     + USART3_IRQHandler - receiving a bluetooth signal
