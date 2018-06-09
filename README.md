@@ -103,6 +103,7 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
        }
        ``` 
          >Simple, isn't it? You specify liquid and amount in centiliters. Thus minimal amount is 10 mililiters.
+   * pump_driver.c
      + Pump library explained
          >Our machine has 4 pumps. Each pump has it's own timer.
          ```c
@@ -111,6 +112,7 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
          TIM_TypeDef* RUM_TIMER = TIM4;
          TIM_TypeDef* VODKA_TIMER = TIM5;
          ```
+	 
          >Thanks to separete timers evry pump is independent from another pumps. Each pump is handled by separete interruption.
          ```c
          const uint8_t LEMON_IRQ = TIM7_IRQn;
@@ -128,11 +130,13 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
          void TIM4_IRQHandler(){rum_IRQHandler();}
          void TIM5_IRQHandler(){vodka_IRQHandler();}
          ```
+	 
          >One timer cycle means that 10 mililiters were pumped.
          ```c
          const int PERIOD = 9999;
          const int PRESCALER = 2748;
          ```
+	 
          >Every pump starts pumping when invoked. Starting pump means to start it's timer and sends low signal to pin connected to relay. 
          ```c
          void start_lemon_pump()
@@ -142,6 +146,7 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
 	   GPIO_ResetBits(GPIOE,LEMON_PIN);
          }
          ```
+	 
          >Pump stop is handled in interrupt handler. When counter is equal to desired amount pump stops.
          ```c
          void lemon_IRQHandler()
