@@ -142,6 +142,27 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
 	         GPIO_ResetBits(GPIOE,LEMON_PIN);
          }
          ```
+         >Pump stop is handled in interrupt handler. When counter is equal to desired amount pump stops.
+	 ```c
+         void lemon_IRQHandler()
+         {
+	         if (TIM_GetITStatus(LEMON_TIMER, TIM_IT_Update) != RESET) {
+		         if (current_lemon_cl < max_lemon_cl)
+		         {
+			         current_lemon_cl++;
+		         }
+		         else
+		         {
+			         GPIO_SetBits(PUMP_GPIO, LEMON_PIN);
+			         TIM_Cmd(LEMON_TIMER, DISABLE);
+         			max_lemon_cl = 0;
+         			current_lemon_cl = 0;
+         			is_lemon_pumping = false;
+         		}
+	         	TIM_ClearITPendingBit(LEMON_TIMER, TIM_IT_Update);
+	         }
+         }
+	 ```
 - Bluetooth handling
   * main.c
     + USART3_IRQHandler - receiving a bluetooth signal
