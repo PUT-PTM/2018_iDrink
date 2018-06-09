@@ -102,6 +102,9 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
         pump(vodka, 3);
        }
        ``` 
+         >Simple, isn't it? You specify liquid and amount in centiliters. Thus minimal amount is 10 mililiters.
+     + Pump library explained
+       
 
 - Bluetooth handling
   * main.c
