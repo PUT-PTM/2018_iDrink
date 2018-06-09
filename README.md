@@ -104,8 +104,44 @@ What we are trying to do here is to build a drink machine! :tropical_drink:
        ``` 
          >Simple, isn't it? You specify liquid and amount in centiliters. Thus minimal amount is 10 mililiters.
      + Pump library explained
-       
+         >Our machine has 4 pumps. Each pump has it's own timer.
+         ```c
+         TIM_TypeDef* LEMON_TIMER = TIM7;
+         TIM_TypeDef* ORANGE_TIMER = TIM3;
+         TIM_TypeDef* RUM_TIMER = TIM4;
+         TIM_TypeDef* VODKA_TIMER = TIM5;
+         ```
+         >Thanks to separete timers evry pump is independent from another pumps. Each pump is handled by separete interruption.
+         ```c
+         const uint8_t LEMON_IRQ = TIM7_IRQn;
+         const uint8_t ORANGE_IRQ = TIM3_IRQn;
+         const uint8_t RUM_IRQ = TIM4_IRQn;
+         const uint8_t VODKA_IRQ = TIM5_IRQn;
 
+         void lemon_IRQHandler();
+         void orange_IRQHandler();
+         void rum_IRQHandler();
+         void vodka_IRQHandler();
+
+         void TIM7_IRQHandler(){lemon_IRQHandler();}
+         void TIM3_IRQHandler(){orange_IRQHandler();}
+         void TIM4_IRQHandler(){rum_IRQHandler();}
+         void TIM5_IRQHandler(){vodka_IRQHandler();}
+         ```
+         >One timer cycle means that 10 mililiters were pumped.
+         ```c
+         const int PERIOD = 9999;
+         const int PRESCALER = 2748;
+         ```
+         >Every pump starts pumping when invoked. Starting pump means to start it's timer and sends low signal to pin connected to relay. 
+         ```c
+         void start_lemon_pump()
+         {
+	         is_lemon_pumping = true;
+	         TIM_Cmd(LEMON_TIMER,ENABLE);
+	         GPIO_ResetBits(GPIOE,LEMON_PIN);
+         }
+         ```
 - Bluetooth handling
   * main.c
     + USART3_IRQHandler - receiving a bluetooth signal
