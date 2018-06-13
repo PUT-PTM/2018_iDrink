@@ -21,7 +21,7 @@ unsigned char selected = 1;
 
 const char menu_000[] = "     [Menu]       "; //0
 const char menu_001[] = "  Wybierz drink   "; //1
-const char menu_002[] = "  Ustawienia      "; //2
+const char menu_002[] = "  Czyszczenie     "; //2
 const char menu_003[] = "  Wykonawcy       "; //3
 const char menu_004[] = "                  "; //4
 
@@ -40,7 +40,7 @@ MenuEntry menu[] =
 {
 		{menu_000, 5, 0, 0, 0, 0},
 		{menu_001, 5, 1, 2, 6, 0},
-		{menu_002, 5, 1, 3, 2, 0},
+		{menu_002, 5, 1, 3, 2, clean},
 		{menu_003, 5, 2, 4, 3, info},
 		{menu_004, 5, 3, 4, 4, start},
 
@@ -137,7 +137,7 @@ void start(void){
 
 void bacardi(void){
 	pump(orange, 8);
-	Delayms(3000);
+	Delayms(5000);
 	pump(rum, 8);
 }
 
@@ -167,6 +167,26 @@ void kociolek(void){
 	pump(orange, 5);
 	pump(lemon, 5);
 	pump(vodka, 3);
+}
+void clean(void){
+	TM_HD44780_Clear();
+	TM_HD44780_Puts(0, 0, "UWAGA");
+	TM_HD44780_Puts(0, 1, "   Czyszczenie");
+	TM_HD44780_Puts(0, 2, "   podloz naczynie");
+	Delayms(3000);
+	int p = 53;
+	char pom[] = "X";
+	while(p>48){
+		pom[0] = p;
+		TM_HD44780_Clear();
+		TM_HD44780_Puts(10, 2, pom);
+		Delayms(1000);
+		p-=1;
+	}
+	pump(rum, 4);
+	pump(orange, 4);
+	pump(lemon, 4);
+	pump(vodka, 4);
 }
 
 void info(void){
@@ -215,7 +235,7 @@ void USART3_IRQHandler(void)
             {
                 bacardi();
             }
-            if (USART3->DR == 'CL' )
+            if (USART3->DR == 'C' )
             {
                cuba_libre();
             }
@@ -227,6 +247,10 @@ void USART3_IRQHandler(void)
             {
                kociolek();
             }
+            if (USART3->DR == 'W' )
+            {
+               clean();
+            }
             if (USART3->DR == 'I' )
             {
                info();
@@ -234,7 +258,7 @@ void USART3_IRQHandler(void)
     }
 }
 
-//send a character trough UART
+
 void sendData(char character){
     while(USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET);
 
@@ -243,11 +267,11 @@ void sendData(char character){
     while (USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET);
 }
 
-void initUart(){
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE); //uart
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE); //rxd txd
+void UART(){
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 
-    // konfiguracja linii Rx i Tx
+
     GPIO_InitTypeDef GPIO_InitStructure;
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
@@ -271,29 +295,26 @@ void initUart(){
     USART_Cmd(USART3, ENABLE);
 }
 
-void initUartIrq(){
-    //nvic configuration structure
+void UART_IRQ(){
     NVIC_InitTypeDef NVIC_InitStructure2;
-    // turning on the interrupt for reciving data
+
     USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
     NVIC_InitStructure2.NVIC_IRQChannel = USART3_IRQn;
     NVIC_InitStructure2.NVIC_IRQChannelPreemptionPriority = 0;
     NVIC_InitStructure2.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure2.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure2);
-    // turning on UART intterupt
+
     NVIC_EnableIRQ(USART3_IRQn);
 }
 
 int main(void) {
 
 
-
-
-	initUart();
-	initUartIrq();
+	UART();
+	UART_IRQ();
 	init();
-    //Initialize system
+
     SystemInit();
 
     //Initialize LCD 20 cols x 4 rows

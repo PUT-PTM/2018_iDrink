@@ -31,6 +31,7 @@ void vodka_juice(void);
 void vodka_shot_juice(void);
 void vodka_cola(void);
 void kociolek(void);
+void clean(void);
 
 
 #endif /* MENU_H_ */
